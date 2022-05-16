@@ -1,11 +1,14 @@
 import './App.css';
+import NavBar from './Componentes/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
       <h1>Mati Maldonado</h1>
-    </div>
+      <NavBar> </NavBar> 
+     </div>
   );
 }
+
 
 export default App;
