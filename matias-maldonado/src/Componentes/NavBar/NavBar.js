@@ -4,7 +4,7 @@ import './NavBar.css'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-
+import MarketBtn from './Marketbtn';
 
 const NavBar = () => {
     return(
@@ -15,6 +15,8 @@ const NavBar = () => {
           <Button id='buton' color="inherit">Productos</Button>
           <Button id='buton' color="inherit">¿Quienes Somos?</Button>
           <Button id='buton' color="inherit">Contacto</Button>
+          <MarketBtn/>
+   
         </Toolbar>
       </AppBar>
         </>

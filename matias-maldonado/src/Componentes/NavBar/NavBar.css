@@ -7,14 +7,17 @@
     flex-direction: row;
     list-style: none;
 }
-li{
-    margin: auto;
-    width: 20%;
-    
-}
+
 #buton{
     border-radius: 20px;
     width: 100%;
     background-color:rgb(204, 141, 69);
     margin: 2%;
+}
+
+#btnCarrito{
+    background-color: rgb(204, 141, 69);
+    border-radius: 100%;
+    margin: 2%;
+    border: solid 2px;
 }
