@@ -4,7 +4,7 @@ import './NavBar.css'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import MarketBtn from './Marketbtn';
+import MarketBtn from './Cartwidget';
 
 const NavBar = () => {
     return(

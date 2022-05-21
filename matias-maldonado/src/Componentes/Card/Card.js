@@ -2,6 +2,8 @@ import { Button } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import "./Card.css"
+import ItemComprar from './ItemComprar';
+import Contador from "./ItemCount"
 
 
 const CardItem = (props) => {
@@ -14,7 +16,9 @@ const CardItem = (props) => {
             <img alt="imagen" id="imagenCard" src={`./${image}`}/>
             <p className='titulo-card'>{title}</p>
             <span> {price}</span>
+            <Contador/>
             <Button variant={'contained'}>Detalle</Button >
+            <ItemComprar/>
         </div>
         </>
     </CardContent>
