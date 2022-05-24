@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import "./Card.css";
 import { useState } from 'react';
 
+
 const Contador = (propiedades)=>{
     const [Count,setCount] = useState(1)
     const [Stock, setStock]= useState(5)
