@@ -1,83 +1,71 @@
-import { Grid } from "@mui/material"
-import { useState, useEffect } from "react"
-const CardList= ({title}) =>{
-    const [products , setProducts] = useState({})
-    const productos=[
-        {
-            title: "",
-            price:"",
-            image:"",
-            description:"",
-            stock: "",
-            id:"",
+// import { Grid } from "@mui/material"
+// import { useState, useEffect } from "react"
 
-        },
 
-        {
-            title: "",
-            price:"",
-            image:"",
-            description:"",
-            stock: "",
-            id:"",
+// const CardList= ({title}) =>{
+//     const [products , setProducts] = useState({})
+    
+// //Promesas, Sirven para saltar el sincronismo de Js y tomar el resultado más adelante
+//     const getProducts = () => {
+//         return new Promise ((resolve,reject) => {
+//             resolve(productos)}, 4000)
+//         }
+// // el número 4000 representa el tiempo de espera para ejectuurase
+//         getProducts()
+//         .then ((response) => {
+//             console.log("Respuesta promesa: ", response)
+//         })
 
-        },
-        {
-            title: "",
-            price:"",
-            image:"",
-            description:"",
-            stock: "",
-            id:"",
+//         .catch ((err) =>{console.log("Fallo la llamada.", err)})
 
-        },
-        {
-            title: "",
-            price:"",
-            image:"",
-            description:"",
-            stock: "",
-            id:"",
+//         .finally(() =>{
 
-        },
-    ]
-//Promesas, Sirven para saltar el sincronismo de Js y tomar el resultado más adelante
-    const getProducts = () => {
-        return new Promise ((resolve,reject) => {
-            resolve(productos)}, 4000)
-        }
-// el número 4000 representa el tiempo de espera para ejectuurase
-        getProducts()
-        .then ((response) => {
-            console.log("Respuesta promesa: ", response)
-        })
+//         }, [])
+// //CARGA DE API        
+//         useEffect(()=>{
+//             fetch("https://jsonplaceholder.typicode.com/users") ,{
 
-        .catch ((err) =>{console.log("Fallo la llamada.", err)})
+//                 headers : {
+//                     //SE cargan elementos como token,o para indicar el origen de la llamada o el tipo de archivo
+//                     "Access-Control-Allow-Origin": "http://localhost:3000",
+//                     "Content-Type": "aplication/json",
 
-        .finally(() =>{
-
-        })
+//                 },
+//                 body: JSON.stringify({
+//                     name:"Matias",
+//                     mail: "jasdlas@gmail.com"
+//                 })
+//             }
+            
+//             .then((response)=> {
+//                 return response.json()
+//             })
+//             .then((res)=>{
+//                 console.log("respuesta : ", res)
+//             })
+//         },[])
         
-        return(
-        <>
-        <h2>Titulo</h2>
-        {console.log("state products: " , products)}
-        <Grid container spacing={2}>
-        {
-            productos.map(({title,price}) => {
-                console.log("item actual: ", item)
-                return (
-                    <Grid item md={3} key={id}>
-                        <CardItem title={productos.title} price={productos.price}/>
-                    </Grid>)
+//         return(
+//         <>
+//         <h2>Titulo</h2>
+//         {console.log("state products: " , products)}
+//         <Grid container spacing={2}>
+//         {
+//             productos.map(({title,price}) => {
+//                 console.log("item actual: ", item)
+//                 return (
+//                     <Grid item md={3} key={id}>
+//                         <CardItem title={productos.title} price={productos.price}/>
+//                     </Grid>)
 
-            })
-        }
-        </Grid>
-        </>
-        )
-}
+//             })
+//         }
+//         </Grid>
+//         </>
+//         )
+// }
 
+// export default CardList
 //Prueba de promesa
 // // const ListaProducto = () =>{
 // //     const productos=[
