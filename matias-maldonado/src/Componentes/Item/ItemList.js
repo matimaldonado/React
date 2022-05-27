@@ -7,7 +7,7 @@ console.log(data)
 return(
   <>
   <div>
-    <Item prod = {data}/>
+    {data.map((prop)=> <Item prod={prop} />}
  </div>
   </>
 )
