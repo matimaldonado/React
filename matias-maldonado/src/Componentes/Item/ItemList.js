@@ -2,19 +2,20 @@
 import Item from "./Item"
 import "../Card/Card.css"
 
-const ItemList = ({data})=>{
-console.log(data)
+const ItemList = ({products})=>{
+
 return(
   <>
-  <div>
-    {data.map((prop)=> (<Item prod={prop} />))}
- </div>
+
+{products.map((prop)=> (<Item prod={prop} />))}
+
   </>
 )
 }
 
 
 export default ItemList
+
 
 
 

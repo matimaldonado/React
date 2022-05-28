@@ -6,7 +6,7 @@ height: 200px;
     display: flex;
     flex-direction: column;
     margin: 5%;
-    height: 100%;
+
 }
 
 .titulo-card{
@@ -20,9 +20,8 @@ span{
 
 #Card1{
     margin: 3%;
-    width: 90%;
+    width: 100%;
     border: solid 1px rgb(204, 141, 69);
-
 }
 
 .Contador{

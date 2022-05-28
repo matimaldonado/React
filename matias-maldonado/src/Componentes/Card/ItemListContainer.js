@@ -4,56 +4,55 @@ import { useEffect, useState } from "react";
 
 
 const CardItem = () => {
-  const [products , setProducts] = useState({});
+  const [products , setProducts] = useState([]);
   
   const productos=[
   {
-    title: "Alfombra Corazon",
-    price:"$1500",
-    image:"Alfombras.PNG",
-    description:"Alfombras corazon varios colores",
+    tipo: "Alfombra Corazon",
+    precio:"$1500",
+    imagen:"Alfombras.PNG",
+    descripcion:"Alfombras corazon varios colores",
     stock: "5",
     id:"Pdt1",
 
 },
 {
-  title: "Repasadores",
-  price:"$300",
-  image:"Repasadores.PNG",
-  description:"Repasadores varios colores y motivos",
+  tipo: "Repasadores",
+  precio:"$300",
+  imagen:"Repasadores.PNG",
+  descripcion:"Repasadores varios colores y motivos",
   stock: "20",
   id:"Pdt2",
 
 },
 {
-  title: "Perfume",
-  price:"$3500",
-  image:"Perfumesvarios.jpg",
-  description:"Perfumes Natura Humor",
+  tipo: "Perfume",
+  precio:"$3500",
+  imagen:"Perfumesvarios.jpg",
+  descripcion:"Perfumes Natura Humor",
   stock: "3",
   id:"Pdt3",
 
 }]
 
-const tomarProducto = () => {
+const tomarProductos = () => {
   return new Promise ((resolve,reject) => {
-      setTimeout(() => {
-      resolve(productos)}, 2000)
-  })
-}
+    setTimeout(()=>{
+            resolve(productos)},2000)
+})}
+
  useEffect(()=>{
-   tomarProducto()
+   tomarProductos()
    .then((response)=>{
      setProducts(response)
    })
  },[])
 
     return(
+
  <>
- 
-    <ItemList data ={products}/>
- 
-  </>
+  <ItemList products = {products}/>
+ </>
     )
 }
 
