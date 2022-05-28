@@ -51,6 +51,7 @@ const tomarProductos = () => {
     return(
 
  <>
+  <h1>Nuestras Ofertas</h1>
   <ItemList products = {products}/>
  </>
     )

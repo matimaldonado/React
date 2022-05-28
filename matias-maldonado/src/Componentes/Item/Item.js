@@ -8,11 +8,11 @@ import { Button, Card, CardContent, Container, Grid } from '@mui/material';
 const Item = ({prod})=>{
    
       return(
+    
         <>
-        <>
-            
-            <Grid container className='general-conteiner' >
-               <Grid item md={4}> 
+        <div>
+             <Grid  container >
+               <Grid item m={3} > 
                 <Card id="Card1" >
                     <div className="card-item">
                         <img alt="imagen" id="imagenCard" src={prod.imagen}  />
@@ -22,12 +22,14 @@ const Item = ({prod})=>{
                         <Button variant={'contained'}>Detalle</Button >
                         <ItemComprar/>
                     </div>
-                    </Card>
+                 </Card>
+                    
                 </Grid>
-        </Grid>
+            </Grid>
+        </div>
+
         </>
-        </>
-    )
+        )
 }
 
        
