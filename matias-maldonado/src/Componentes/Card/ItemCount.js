@@ -2,12 +2,13 @@ import { Button } from '@mui/material';
 import "./Card.css";
 import { useState } from 'react';
 
-const Contador = (propiedades)=>{
+const Contador = ({cantidad})=>{
     const [Count,setCount] = useState(1)
-    const [Stock, setStock]= useState(5)
+
     
     const addItem = ()=>{
-        if(Count < Stock){
+        console.log("stock = ",cantidad)
+        if(Count < cantidad){
         setCount(Count + 1)
     }}
     
