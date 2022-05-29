@@ -7,11 +7,18 @@ const ItemList = ({products})=>{
 
 return(
   <>
-<div id="tarjeta">
-
-{products.map((prop)=> (<Item prod={prop} />))}
-
-</div>
+        <Grid container spacing={2}>
+            {
+                products.map( (prod) => {
+                  const{tipo,precio,imagen,id}=prod  
+                  return(
+                        <Grid item md={4} key={id}>
+                            <Item title={tipo} price={precio} image={imagen}/>
+                        </Grid>
+                    )
+                })
+            }
+        </Grid>
   </>
 )
 }

@@ -5,27 +5,21 @@ import Contador from "../Card/ItemCount"
 import { Button, Card, CardContent, Container, Grid } from '@mui/material';
  
 
-const Item = ({prod})=>{
-   
+const Item = ({image,title,price})=>{
+ 
       return(
-    
         <>
         <div>
-             <Grid  container >
-               <Grid item m={3} > 
                 <Card id="Card1" >
                     <div className="card-item">
-                        <img alt="imagen" id="imagenCard" src={prod.imagen}  />
-                        <p className='titulo-card'>{prod.tipo}</p>
-                        <span>{prod.precio}</span>
+                        <img alt="imagen" id="imagenCard" src={`./${image}`}  />
+                        <p className='titulo-card'>{title}</p>
+                        <span>{price}</span>
                         <Contador/>
                         <Button variant={'contained'}>Detalle</Button >
                         <ItemComprar/>
                     </div>
                  </Card>
-                    
-                </Grid>
-            </Grid>
         </div>
 
         </>

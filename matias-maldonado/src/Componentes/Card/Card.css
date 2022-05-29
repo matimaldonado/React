@@ -6,7 +6,7 @@ height: 200px;
 .card-item{
     display: flex;
     flex-direction: column;
-    margin: 5%;
+    margin: 10%;
 
 }
 
@@ -22,7 +22,7 @@ span{
 #Card1{
     display:flex ;
     margin: 5%;
-    width: 110%;
+    width: 90%;
     border: solid 1px rgb(204, 141, 69);
 }
 
@@ -52,9 +52,3 @@ span{
     padding: 5%;
 }
 
-#tarjeta{
-    display: flex;
-    width: 100%;
-    margin-left: 5%;
-          
-}
