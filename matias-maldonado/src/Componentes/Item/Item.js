@@ -2,7 +2,7 @@
 import "../Card/Card.css"
 import ItemComprar from "../Card/ItemComprar";
 import Contador from "../Card/ItemCount"
-import { Button, Card, CardContent, Container, Grid } from '@mui/material';
+import { Button, Card} from '@mui/material';
  
 
 const Item = ({image,title,price,stock})=>{

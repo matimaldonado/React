@@ -12,7 +12,7 @@ return(
                 products.map( (prod) => {
                   
                   const{tipo,precio,imagen,id,stock}=prod  
-                  console.log(stock)
+                 
                   return(
                         <Grid item md={4} key={id}>
                             <Item title={tipo} price={precio} image={imagen} stock={stock}/>

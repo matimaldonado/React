@@ -4,6 +4,7 @@ import Item from './Componentes/Item/Item';
 import ItemList from './Componentes/Item/ItemList';
 import CardItem from './Componentes/Card/ItemListContainer';
 import { List } from '@mui/material';
+import ItemDetailContainer from './Componentes/Detalle prod/ItemDetailContainer';
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
       <h1>Mati Maldonado</h1>
       <NavBar/>        
       <CardItem className = "tarjeta" />
+      <ItemDetailContainer/>
      
       <footer>
 

@@ -1,0 +1,29 @@
+#detalle{
+    display: flex;
+    flex-direction: row;
+}
+#Itemdetalle{
+    border: solid 1px rgb(204, 141, 69);
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+}
+
+#Itemdetalle img{
+    width: 80%;
+    height: 60%;
+}
+
+#botonesdetalle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30%;
+    border: solid 1px rgb(204, 141, 69) ;
+    width: 50%;
+    height: 50%;
+
+}
