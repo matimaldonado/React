@@ -5,16 +5,18 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import MarketBtn from './Cartwidget';
+import { Link } from 'react-router-dom';
+
 
 const NavBar = () => {
     return(
         <> 
       <AppBar position="static">
         <Toolbar >
-          <Button id='buton' color="inherit">Inicio</Button>
-          <Button id='buton' color="inherit">Productos</Button>
+          <Button id='buton' color="inherit"> <Link to="/">Inicio</Link></Button>
+          <Button id='buton' color="inherit"> <Link to="/Productos">Productos</Link> </Button>
           <Button id='buton' color="inherit">¿Quienes Somos?</Button>
-          <Button id='buton' color="inherit">Contacto</Button>
+          <Button id='buton' color="inherit"> <Link to="/Contacto">Contacto</Link> </Button>
           <MarketBtn/>
    
         </Toolbar>

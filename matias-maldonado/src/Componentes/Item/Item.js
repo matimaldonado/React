@@ -3,10 +3,9 @@ import "../Card/Card.css"
 import ItemComprar from "../Card/ItemComprar";
 import Contador from "../Card/ItemCount"
 import { Button, Card} from '@mui/material';
- 
+import { Link } from "react-router-dom"; 
 
-const Item = ({image,title,price,stock})=>{
- 
+const Item = ({image,title,price,stock,id})=>{
       return(
         <>
         <div>
@@ -16,8 +15,8 @@ const Item = ({image,title,price,stock})=>{
                         <p className='titulo-card'>{title}</p>
                         <span>{price}</span>
                         <Contador cantidad={stock}/>
-                        <Button variant={'contained'}>Detalle</Button >
-                        <ItemComprar/>
+                        <Button variant={'contained'}> <Link to={'/Productos/' + id}> Ver detalle</Link> </Button >
+                        
                     </div>
                  </Card>
         </div>
