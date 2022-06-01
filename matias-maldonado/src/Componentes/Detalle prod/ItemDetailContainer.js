@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
   
    useEffect(()=>{
      
-    console.log(filtroProducto)
+    console.log("producto" , filtroProducto)
     tomarDetalle()
      .then((response)=>{
        setDetalle(filtroProducto)
@@ -28,6 +28,8 @@ const ItemDetailContainer = () => {
     const filtroProducto =Productos.find((product)=>{
       return product.id == id
     }) 
+
+    
   
       return(
    

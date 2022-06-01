@@ -11,10 +11,11 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     return(
         <> 
+        <h1> <Link to='/'>Mati Maldonado</Link></h1>
       <AppBar position="static">
         <Toolbar >
           <Button id='buton' color="inherit"> <Link to="/">Inicio</Link></Button>
-          <Button id='buton' color="inherit"> <Link to="/Productos">Productos</Link> </Button>
+          <Button id='buton' color="inherit"> <Link to="/Products/:category">Productos</Link> </Button>
           <Button id='buton' color="inherit">¿Quienes Somos?</Button>
           <Button id='buton' color="inherit"> <Link to="/Contacto">Contacto</Link> </Button>
           <MarketBtn/>

@@ -11,11 +11,11 @@ return(
             {
                 products.map( (prod) => {
                   
-                  const{tipo,precio,imagen,id,stock}=prod  
+                  const{tipo,precio,imagen,id,stock, category}=prod  
                  
                   return(
                         <Grid item md={4} key={id}>
-                            <Item title={tipo} price={precio} image={imagen} stock={stock} id={id}/>
+                            <Item title={tipo} price={precio} image={imagen} stock={stock} id={id} category={category}/>
                         </Grid>
                     )
                 })
