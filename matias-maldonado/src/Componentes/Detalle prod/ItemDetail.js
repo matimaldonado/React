@@ -7,14 +7,17 @@ console.log(prod)
     return(
 <>
 <div id="detalle">
-<div id="Itemdetalle">
-  <h2>{prod.tipo}</h2>
-  <img src={`../${prod.imagen}`}/>
-  <h2>{prod.descripcion}</h2>
-  <h2>{prod.precio}</h2>
-</div>
-<div id="botonesdetalle">
-  <Contador cantidad = {prod.stock}/>
+
+  <div id="Itemdetalle">
+    <h2>{prod.tipo}</h2>
+    <img src={`../${prod.imagen}`}/>
+
+  </div>
+  <div id="botonesdetalle">
+    <h2>{prod.descripcion}</h2>
+    <h2>{prod.precio}</h2>
+    <Contador cantidad = {prod.stock}/>
+
   </div>
 </div>
 </>

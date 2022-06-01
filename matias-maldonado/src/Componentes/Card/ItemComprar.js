@@ -13,7 +13,7 @@ import "./Card.css"
         return(
             <>
             <div>
-                <Button onClick = {Compra} >Comprar</Button>
+                <Button id="botonComprar" onClick = {Compra} >Comprar</Button>
             </div>
             </>
         )
