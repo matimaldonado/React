@@ -11,12 +11,13 @@ const ProductoList = ()=>{
 
      
      useEffect( () => {
+         setProducts([])
         console.log("categoria;" , category)
         tomarProductos()
        .then((response)=>{
         filtroCategoria(response)
               })
-     },[])
+     },[category])
 
      const tomarProductos = () => {
         return new Promise ((resolve,reject) => {
@@ -25,8 +26,8 @@ const ProductoList = ()=>{
     
      const filtroCategoria = (array) =>{
          return array.map((item)=>{
-             if(item.categoria == category){
-                 return setProducts(Productos =>[...Productos, item])
+             if(item.category == category){
+                 return setProducts(products =>[...products, item])
              }
          })
      }
