@@ -16,20 +16,21 @@ const tomarProductos = () => {
 })}
 
  useEffect(()=>{
+   setProducts{[]}
    tomarProductos()
    .then((response)=>{
      filtroCategoria(response)
    })
- },[])
+ },[category])
 
  const filtroCategoria = (array) =>{
   return array.map( (item) => {
     if(item.category === category) {
         return setProducts(products => [...products, item]),
-        console.log("hola", item.category)
+      
       }else{
         return setProducts(array),
-        console.log("chau", item.category)
+        
       }
   })
 }
