@@ -33,7 +33,7 @@ const Productos3={
           tipo: "Alfombra Corazon",
           precio:"$1500",
           imagen:"Alfombras.PNG",
-          category:"Varios",
+          category :"Varios",
           descripcion:"Alfombras corazon varios colores",
           stock: 5,
           id:"Pdt1",
