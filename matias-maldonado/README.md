@@ -68,3 +68,66 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Trabajo "MATIAS MALDONADO"
+
+Este trabajo fue creado como parte del curso de React JS en Coderhouse para la entrega del proyecto final, en la continuación se detallan cada uno de los componentes dentro del mismo.
+
+### Carpeta public
+Contiene las imagenes que se colocaran en el posterior sitio web.
+
+### Carpeta SRC
+Contiene todos los componentes propios al proyecto,incluye la carpeta "componentes" y los archivos app.js e Index.js y .css
+
+  ### Index.js
+Página principal del proyecto donde se ejecuta el componente app.js
+
+
+  ### Index.css
+Pagína correspondiente al diseño del index.js y al contenido general del proyecto con fuentes de letras
+
+  ### App.js
+Se incluye la funcion App que contiene el encabezado del sitio y contendrá los componentes principales a mostrar en el proyecto.
+
+
+### Carpeta Componentes
+Carpeta contenedora general de todos los componentes creados y empleados en el proyecto. En el mismo se encuentran las carpetas Card, Detalle prod, Item, NavBar, Pages.
+
+### Carpeta Card
+Contiene los elementos correspondientes al diseño y componentes creados para la muestra de las tarjeta de los productos.
+
+
+  ### CardList.js
+
+  ### ItemComprar.js
+Contiene el boton que se utilizara para la compra de los diversos productos. Dentro se encuentra la funcion ItemComprar, donde se crea el boton ya mencionado. Se ejecutan complementos integrados de MUI para darle estil al <Button/>. El boton contiene el atributo OnClick que lo vincula a la funcion Compra donde ejecuta por consola el total de articulos adquiridos.
+
+
+  ### ItemCount.js
+
+Contiene el componente Contador que incluye un estado donde se guarda la cantidad de elementos a adquirir. Contiene los botones de suma(+) y resta (-) para agregar o restar los elementos a adquirir. A su vez está asociado con el stock de los elementos para no superar la cantidad disponible a comprar. Tambien incluye un condicional que no permite el disminuir la cantidad de compra a un valor menor a 1.
+
+  ### ItemListContainer.js
+
+### Carpeta Detalle prod
+  ### Detalleprod.js
+  ### ItemDetailContainer.js
+  ### ItemDetalle.css
+
+### Carpeta Item
+  ### Item.js
+  ### ItemList.js
+
+### Carpeta NavBar
+  ### Cartwidget.js
+  ### NavBar.js
+  ### Nav Bar.css
+  
+### Carpeta Pages
+  ### Contacto.js
+  ### Detalleproducto.js
+  ### Home.js
+  ### Productos.js
+
+
