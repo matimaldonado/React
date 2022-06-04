@@ -1,6 +1,5 @@
 //Cargar datos del producto y se lo pasa al app
 import "../Card/Card.css"
-import ItemComprar from "../Card/ItemComprar";
 import Contador from "../Card/ItemCount"
 import { Button, Card} from '@mui/material';
 import { Link } from "react-router-dom"; 

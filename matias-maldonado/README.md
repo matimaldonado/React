@@ -98,8 +98,6 @@ Carpeta contenedora general de todos los componentes creados y empleados en el p
 Contiene los elementos correspondientes al diseño y componentes creados para la muestra de las tarjeta de los productos.
 
 
-  ### CardList.js
-
   ### ItemComprar.js
 Contiene el boton que se utilizara para la compra de los diversos productos. Dentro se encuentra la funcion ItemComprar, donde se crea el boton ya mencionado. Se ejecutan complementos integrados de MUI para darle estil al <Button/>. El boton contiene el atributo OnClick que lo vincula a la funcion Compra donde ejecuta por consola el total de articulos adquiridos.
 
@@ -109,25 +107,48 @@ Contiene el boton que se utilizara para la compra de los diversos productos. Den
 Contiene el componente Contador que incluye un estado donde se guarda la cantidad de elementos a adquirir. Contiene los botones de suma(+) y resta (-) para agregar o restar los elementos a adquirir. A su vez está asociado con el stock de los elementos para no superar la cantidad disponible a comprar. Tambien incluye un condicional que no permite el disminuir la cantidad de compra a un valor menor a 1.
 
   ### ItemListContainer.js
+Contiene el funcion CardItem que luego se ocupara de realizar los filtros para las categorias de los productos y de tomar las promesas del array Producto. A traves de aqui se pasaran las propiedades a Item List.
 
 ### Carpeta Detalle prod
+Contiene los componentes que crean las tarjetas individuales con cada uno de los respectivos productos
   ### Detalleprod.js
+Contiene el array que lleva la informacion necesaria de cada uno de los productos a mostrar.
   ### ItemDetailContainer.js
+Contiene la funcion ItemDetailContainer que ejecutara el detalle de cada uno de los elementos a vender. Lo realiza a traves de una promesa en donde recibe el array producto y lo filtra según el id de cada uno de ellos, pasando las propiedades a través de un estado al ItemDetail
   ### ItemDetalle.css
+Contiene los estilos a aplicar en los componentes ItemDetailContainer y en ItemDetail
+
+  ### ItemDetail.js
+  Contiene la funcion ItemDetail que recibe las propiedades y los elementos de ItemDetailConteiner y los pasa a través de las card que se mostraran finalmente.
 
 ### Carpeta Item
+Contiene los elementos que se veran en la pantalla principal como tarjetas para los productos
+
   ### Item.js
+Contiene la funcion Item, que recibe propiedades de ItemList y las lleva a una Card donde se incluyen las imagenes, titulo y precio del producto, junto con los botones de cuenta, de compra y detalle.  
   ### ItemList.js
+Contiene ItemList que recibe las propiedades de ItemListContainer, realiza un map de las mismas y las divides para pasarselas a Item.
 
 ### Carpeta NavBar
-  ### Cartwidget.js
-  ### NavBar.js
-  ### Nav Bar.css
-  
-### Carpeta Pages
-  ### Contacto.js
-  ### Detalleproducto.js
-  ### Home.js
-  ### Productos.js
+Contiene los elementos cargados en el NavBar de nuestro proyecto.
 
+  ### Cartwidget.js
+Contiene el elemento MarketBtn que tiene el carrito de compras. Es un componente que se crea a través de la descarga de MUI.
+
+  ### NavBar.js
+Contiene la funcion NavBar que ejecuta la barra de navegación superior del sitio. En el se encuentran linkeados el Home, contacto, productos y Quienes somos junto con el carrito de compras. A su vez en productos tenemos un desplegable que tiene la categoria de los productos ofrecidos. Los elementos para el desplegable y para los botones son obtenidos de MUI.
+
+  ### Nav Bar.css
+Contiene los elementos de diseño de la barra de navegacion.
+
+### Carpeta Pages
+Contiene los componentes que conllevan la informacion de cada página del sitio.
+  ### Contacto.js
+  Aún en trabajo
+  ### Detalleproducto.js
+Contiene el componete DetalleProducto que recibe a ItemDetailContainer y luego es enviado a App.js para ser linkeado y mostrado en el sitio pero solo mostrando el detalle de cada uno de los productos.  
+  ### Home.js
+  Contiene el componete Home que recibe a CardList y luego es enviado a App.js para ser linkeado y mostrado en el sitio como página principal del mismo.
+  ### Productos.js
+Contiene el componete ProductoList que recibe a CardItem y luego es enviado a App.js para ser linkeado y mostrado en el sitio pero solo mostrando las categorias de los mismos.  
 
