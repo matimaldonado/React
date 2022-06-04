@@ -9,27 +9,37 @@ const CardItem = () => {
   const [products , setProducts] = useState([]);
   const {category} = useParams()
 
-const tomarProductos = () => {
-  return new Promise ((resolve,reject) => {
-    setTimeout(()=>{
-            resolve(Productos)},2000)
-})}
 
  useEffect(()=>{
-   setProducts{[]}
-   tomarProductos()
+   setProducts([])
+    tomarProductos()
    .then((response)=>{
      filtroCategoria(response)
    })
  },[category])
 
+ const tomarProductos = () => {
+  return new Promise ((resolve,reject) => {
+    setTimeout(()=>{
+            resolve(Productos)})
+})}
+
+
  const filtroCategoria = (array) =>{
-  return array.map( (item) => {
-    if(item.category === category) {
-        return setProducts(products => [...products, item]),
-      
-      }else{
-        return setProducts(array),
+  
+  const filtrocat = Productos.find((filtro)=>{
+    return filtro.categoria === category
+  })
+  
+    return array.map((item)=>{
+    
+      if(item.categoria == category){
+
+        return setProducts([filtrocat])
+
+      } else{
+        return setProducts(array)
+
         
       }
   })

@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
        setDetalle(filtroProducto)
      })},[])
 
-    const filtroProducto =Productos.find((product)=>{
+    const filtroProducto = Productos.find((product)=>{
       return product.id == id
     }) 
 
