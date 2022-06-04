@@ -35,7 +35,10 @@ const CardItem = () => {
     
       if(item.categoria == category){
 
-        return setProducts([filtrocat])
+        return setProducts([filtrocat]), 
+        console.log("Hola" , item.categoria),
+        console.log("Chau", category)
+
 
       } else{
         return setProducts(array)

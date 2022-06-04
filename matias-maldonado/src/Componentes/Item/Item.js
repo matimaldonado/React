@@ -15,7 +15,7 @@ const Item = ({image,title,price,stock,id})=>{
                         <p className='titulo-card'>{title}</p>
                         <span>{price}</span>
                         <Contador cantidad={stock}/>
-                        <Button variant={'contained'}> <Link to={'/Productos/' + id} > Ver detalle</Link> </Button >
+                        <Button id="botonDetalle" variant={'contained'}> <Link to={'/Productos/' + id} > Ver detalle</Link> </Button >
                         
                     </div>
                  </Card>

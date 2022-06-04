@@ -32,6 +32,8 @@ span{
     flex-direction: row;
     align-items: center;
     margin: auto;
+
+    
 }
 
 #botonMas{
@@ -58,4 +60,10 @@ span{
     border-bottom: 20%;
     flex-direction: flex ;
     margin: auto;
+}
+
+#botonDetalle{
+    margin: auto;
+    margin-top: 3%;
+    color: white;
 }
