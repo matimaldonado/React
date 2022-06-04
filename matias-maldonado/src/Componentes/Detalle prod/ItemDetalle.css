@@ -5,7 +5,7 @@
 #Itemdetalle{
     border: solid 1px rgb(204, 141, 69);
     width: 60%;
-    height: 80%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,8 +15,8 @@
 }
 
 #Itemdetalle img{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 60%;
 }
 
 #botonesdetalle{
@@ -29,5 +29,7 @@
     width: 30%;
     margin-right: 5%;
     height: 30%;
+    text-decoration: none;
+    
 
 }

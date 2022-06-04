@@ -12,9 +12,15 @@ const CardItem = () => {
 
  useEffect(()=>{
    setProducts([])
-    tomarProductos()
+   tomarProductos()
    .then((response)=>{
-     filtroCategoria(response)
+     if(category) { 
+       const filtroProducto = response.filter(item=>item.categoria === category)
+      setProducts(filtroProducto)
+     } else {
+       setProducts(response)
+     }
+    
    })
  },[category])
 
@@ -25,28 +31,7 @@ const CardItem = () => {
 })}
 
 
- const filtroCategoria = (array) =>{
-  
-  const filtrocat = Productos.find((filtro)=>{
-    return filtro.categoria === category
-  })
-  
-    return array.map((item)=>{
-    
-      if(item.categoria == category){
-
-        return setProducts([filtrocat]), 
-        console.log("Hola" , item.categoria),
-        console.log("Chau", category)
-
-
-      } else{
-        return setProducts(array)
-
-        
-      }
-  })
-}
+ 
 
     return(
 

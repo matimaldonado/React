@@ -64,6 +64,7 @@ span{
 
 #botonDetalle{
     margin: auto;
+    text-decoration: none;
     margin-top: 3%;
     color: white;
 }

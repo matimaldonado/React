@@ -24,10 +24,10 @@ const NavBar = () => {
   
   return(
         <> 
-        <h1> <Link to='/'>Mati Maldonado</Link></h1>
+        <h1> <Link id="titulo" to='/'>Mati Maldonado</Link></h1>
       <AppBar position="static">
         <Toolbar >
-          <Button id='buton' color="inherit"> <Link to="/">Inicio</Link></Button>
+          <Button id='buton' color="inherit"> <Link id='buton' to="/">Inicio</Link></Button>
           
           <Button
         
@@ -47,10 +47,11 @@ const NavBar = () => {
         onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
+        
         }}
       >
         {categorys.map((cat)=>{
-         return <MenuItem onClick={handleClose}><Link to={`/products/${cat}`}>{cat}</Link></MenuItem>
+         return <MenuItem onClick={handleClose}><Link id="buton" to={`/products/${cat}`}>{cat}</Link></MenuItem>
         })}
         
       </Menu>
@@ -59,7 +60,7 @@ const NavBar = () => {
 
 
           <Button id='buton' color="inherit">¿Quienes Somos?</Button>
-          <Button id='buton' color="inherit"> <Link to="/Contacto">Contacto</Link> </Button>
+          <Button id='buton' color="inherit"> <Link id='buton' to="/Contacto">Contacto</Link> </Button>
           <MarketBtn/>
    
         </Toolbar>
