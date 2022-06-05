@@ -3,7 +3,7 @@ import "./Card.css";
 import { useState } from 'react';
 import ItemComprar from './ItemComprar';
 
-const Contador = ({cantidad})=>{
+const Contador = ({cantidad, data})=>{
     const [Count,setCount] = useState(1)
     
     
@@ -26,7 +26,7 @@ const Contador = ({cantidad})=>{
         <p id="Cantidad">{Count}</p>
         <Button onClick={addItem} id='botonMas'>+</Button>
         </div>
-        <ItemComprar total={Count}/>
+        <ItemComprar data = {data} total={Count}/>
         </>
     )
 }

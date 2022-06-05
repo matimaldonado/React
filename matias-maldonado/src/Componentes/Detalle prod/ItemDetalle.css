@@ -29,7 +29,15 @@
     width: 30%;
     margin-right: 5%;
     height: 30%;
-    text-decoration: none;
-    
+     
 
+}
+
+#botonTerminar{
+    background-color: rgb(40, 132, 218);
+    color: white;
+    flex-direction: flex ;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 10%;
 }
