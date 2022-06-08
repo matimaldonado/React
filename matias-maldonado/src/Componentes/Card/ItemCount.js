@@ -27,6 +27,7 @@ const Contador = ({cantidad, data})=>{
         <Button onClick={addItem} id='botonMas'>+</Button>
         </div>
         <ItemComprar data = {data} total={Count}/>
+        
         </>
     )
 }

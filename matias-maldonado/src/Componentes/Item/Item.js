@@ -4,7 +4,7 @@ import Contador from "../Card/ItemCount"
 import { Button, Card} from '@mui/material';
 import { Link } from "react-router-dom"; 
 
-const Item = ({image,title,price,stock,id})=>{
+const Item = ({image,title,price,stock,id,descripcion})=>{
     
        return(
         <>
@@ -14,7 +14,7 @@ const Item = ({image,title,price,stock,id})=>{
                         <img alt={`${title}`} id="imagenCard" src={`/${image}`}  />
                         <p className='titulo-card'>{title}</p>
                         <span>{price}</span>
-                        <Contador data={{title,price,stock,id}} cantidad={stock}/>
+                        <Contador data={{image,title,price,stock,id}} cantidad={stock}/>
                         <Button id="botonDetalle" variant={'contained'}> <Link id="botonDetalle" to={'/Productos/' + id} > Ver detalle</Link> </Button >
                         
                     </div>

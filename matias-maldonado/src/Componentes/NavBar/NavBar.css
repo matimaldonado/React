@@ -17,7 +17,23 @@
     text-decoration: none;   
     color: white;
 }
+#detalleCompra{
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    border: solid 1px rgb(204, 141, 69);
+    width: 100%;
+    height: 100%;
+}
 
+#detalleCompra img{
+    width: 30%;
+    height: 30%;
+}
+#Itemdetalle img{
+    width: 80%;
+    height: 60%;
+}
 
 #btnCarrito{
     background-color: rgb(204, 141, 69);

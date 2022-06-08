@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Productos from "../Detalle prod/Detalleprod";
 import { useParams } from "react-router-dom";
 
-
 const CardItem = () => {
   const [products , setProducts] = useState([]);
   const {category} = useParams()

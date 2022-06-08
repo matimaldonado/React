@@ -1,22 +1,28 @@
 import { Button } from "@mui/material"
 import "./Card.css"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import CartContext  from "../Context/CartContext"
 
 
     const ItemComprar = ({total, data})=>{
 
+        const{ addProductToCart  } = useContext(CartContext)
+
         const [mostrarBoton, setMostrarBoton] = useState(false)
         
         const Compra = ()=>{
-            console.log ("Usted compró ", total)
-            console.log ("Producto: ", data )
+        
+        addProductToCart(data)
+            
+        console.log("Cantidad de productos ", total)    
             
             }
 
          if(mostrarBoton === true){
-            {Compra()}
+            Compra()
            
+
            return(
            <>
             <Button><Link id="botonTerminar" to= "/cart"> Terminar compra </Link></Button>
@@ -27,7 +33,7 @@ import { useState } from "react"
             
             <>
             <div>
-            <Button id="botonComprar" onClick={()=>setMostrarBoton(true)} >Comprar</Button>
+            <Button id="botonComprar" onClick={()=>setMostrarBoton(true)} >Agregar al carrito</Button>
           
             </div>
             </>

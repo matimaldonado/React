@@ -5,14 +5,17 @@ import Home from './Componentes/Pages/Home';
 import Contacto from './Componentes/Pages/Contacto';
 import DetalleProducto from './Componentes/Pages/Detalleproducto';
 import ProductoList from './Componentes/Pages/Productos';
-import {Link} from 'react-router-dom'
+import { CartProvider } from './Componentes/Context/CartContext';
+
+
 
 function App() {
  
   return (
     <div className="App">
       
-      
+      <CartProvider>      
+
       <BrowserRouter>
       <NavBar/>
       <Routes>
@@ -26,7 +29,8 @@ function App() {
      
 
       </BrowserRouter>        
-      
+      </CartProvider>
+
       <footer>
 
       </footer>
