@@ -28,20 +28,21 @@
 //     }
 
 
-    const Productos=[
+    const Productos =[
         {
           tipo: "Alfombra Corazon",
-          precio:"$1500",
+          precio: 1500,
           imagen:"Alfombras.PNG",
           categoria:"alfombras",
           descripcion:"Alfombras corazon varios colores",
           stock: 5,
           id:"Pdt1",
+
       
       },
       {
         tipo: "Repasadores",
-        precio:"$300",
+        precio: 300,
         imagen:"Repasadores.PNG",
         categoria:"repasadores",
         descripcion:"Repasadores varios colores y motivos",
@@ -51,7 +52,7 @@
       },
       {
         tipo: "Perfume",
-        precio:"$3500",
+        precio: 3500,
         imagen:"Perfumesvarios.jpg",
         categoria:"perfumes",
         descripcion:"Perfumes Natura Humor",

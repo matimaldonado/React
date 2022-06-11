@@ -22,13 +22,13 @@
     flex-direction: row;
     margin: 2%;
     border: solid 1px rgb(204, 141, 69);
-    width: 100%;
+    width: 70%;
     height: 100%;
 }
 
 #detalleCompra img{
-    width: 30%;
-    height: 30%;
+    width: 15%;
+    margin: auto;
 }
 #Itemdetalle img{
     width: 80%;
@@ -47,3 +47,17 @@
     color: black;
 }
 
+#botonCarrito{
+    background-color: rgb(40, 132, 218);
+    color: white;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10%;
+    padding: 3%;
+}
+
+#botonCompra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

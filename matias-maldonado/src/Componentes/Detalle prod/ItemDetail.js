@@ -17,7 +17,7 @@ const ItemDetail = ({prod})=>{
   </div>
   <div id="botonesdetalle">
     <h2>{prod.descripcion}</h2>
-    <h2>{prod.precio}</h2>
+    <h2>${prod.precio}</h2>
     <Contador
      data = {prod}
      cantidad = {prod.stock}/>

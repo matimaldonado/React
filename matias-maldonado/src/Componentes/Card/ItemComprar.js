@@ -26,13 +26,13 @@ import CartContext  from "../Context/CartContext"
         }}
 
          if(mostrarBoton === true){
-            addProductToCart(data)
+            addProductToCart({data,Count})
             
             console.log("Cantidad de productos ", Count)
 
            return(
            <>
-            <Button><Link id="botonTerminar" to= "/cart"> Terminar compra </Link></Button>
+            <Button><Link id="botonTerminar" to= "/Cart"> Terminar compra </Link></Button>
             </>
          )}
          else{       

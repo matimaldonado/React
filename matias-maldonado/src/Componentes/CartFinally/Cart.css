@@ -1,0 +1,29 @@
+#Cart{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#detalleCart{
+    
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    align-items: center;
+    border: solid 1px rgb(204, 141, 69);
+    width: 60%;
+
+}
+
+#detalleCart img{
+    width: 20%;
+    margin: auto;
+}
+#butonCart{
+    border-radius: 20px;
+    background-color:rgb(204, 141, 69);
+    margin: 2%;
+    text-decoration: none;   
+    color: white;
+    padding: 1%;
+}

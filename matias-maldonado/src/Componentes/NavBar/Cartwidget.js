@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
 import Menu from '@mui/material/Menu';
 import './NavBar.css'
+import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const MarketBtn = () =>{
@@ -31,7 +32,7 @@ const MarketBtn = () =>{
           'aria-labelledby': 'basic-button',
                 }}
       >
-       <div>
+       <div id="botonCompra">
                     {cartListItems.length === 0 && (
                         <>
                             <p>No hay productos agregados al carrito</p>
@@ -50,9 +51,10 @@ const MarketBtn = () =>{
           <Button>
               <DeleteIcon />
           </Button>
-          </div>  
+          </div>
        </>
        )})}
+       <Button><Link id="botonCarrito" to= "/Cart"> Terminar compra </Link></Button>  
        </div>         
       </Menu>
         </>
