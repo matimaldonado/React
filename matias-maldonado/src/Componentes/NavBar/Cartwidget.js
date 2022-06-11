@@ -47,7 +47,6 @@ const MarketBtn = () =>{
             <img alt={`${prod.descripcion}`} src={`../${prod.image}`}/>
             <p>{prod.descripcion}</p>            
             <h2>{prod.price}</h2>
-            <p>Cantidad{}</p>
           <Button>
               <DeleteIcon />
           </Button>

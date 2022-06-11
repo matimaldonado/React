@@ -5,23 +5,30 @@ import { useContext, useState } from "react"
 import CartContext  from "../Context/CartContext"
 
 
-    const ItemComprar = ({total, data})=>{
+    const ItemComprar = ({stock, data})=>{
 
         const{ addProductToCart  } = useContext(CartContext)
 
         const [mostrarBoton, setMostrarBoton] = useState(false)
         
-        const Compra = ()=>{
+        const [Count,setCount] = useState(1)
         
-        addProductToCart(data)
-            
-        console.log("Cantidad de productos ", total)    
-            
-            }
+        
+        const addItem = ()=>{
+            console.log("stock = ",stock)
+            if(Count < stock){
+            setCount(Count + 1)
+        }}
+        
+        const restItem = () => {
+            if(Count > 1){
+            setCount (Count - 1)
+        }}
 
          if(mostrarBoton === true){
-            Compra()
-           
+            addProductToCart(data)
+            
+            console.log("Cantidad de productos ", Count)
 
            return(
            <>
@@ -32,10 +39,13 @@ import CartContext  from "../Context/CartContext"
         return(
             
             <>
-            <div>
-            <Button id="botonComprar" onClick={()=>setMostrarBoton(true)} >Agregar al carrito</Button>
-          
+            <div className='Contador'>
+                <Button onClick={restItem} id='botonMenos'>-</Button>
+                <p id="Cantidad">{Count}</p>
+                <Button onClick={addItem} id='botonMas'>+</Button>
             </div>
+            <Button id="botonComprar" onClick={()=>setMostrarBoton(true)} >Agregar al carrito</Button>
+
             </>
         )}
     }

@@ -3,6 +3,8 @@ import ItemList from '../Item/ItemList';
 import { useEffect, useState } from "react";
 import Productos from "../Detalle prod/Detalleprod";
 import { useParams } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../Firebase/firebaseConfig";
 
 const CardItem = () => {
   const [products , setProducts] = useState([]);
@@ -22,6 +24,8 @@ const CardItem = () => {
     
    })
  },[category])
+
+
 
  const tomarProductos = () => {
   return new Promise ((resolve,reject) => {

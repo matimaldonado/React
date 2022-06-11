@@ -3,7 +3,8 @@ import { createContext, useState } from "react";
 const CartContext = createContext()
 
 const CartProvider = ({children}) =>{
-const [cartListItems, setCartListItems] = useState ([])
+
+    const [cartListItems, setCartListItems] = useState ([])
 
 
 const addProductToCart = (products) => {
@@ -15,12 +16,11 @@ const addProductToCart = (products) => {
         console.log("Se agrego algo" , products)    
         setCartListItems(cartListItems => [...cartListItems, products])
         
-    }
-}
+    }}
 
 const cartInfo = {
     cartListItems,
-    addProductToCart
+    addProductToCart,
 }
     
 return(
