@@ -10,7 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 
 const NavBar = () => {
-    
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

@@ -14,7 +14,7 @@ const Item = ({image,title,price,stock,id,descripcion})=>{
                         <img alt={`${title}`} id="imagenCard" src={`/${image}`}  />
                         <p className='titulo-card'>{title}</p>
                         <span>${price}</span>
-                        <Contador data={{image,title,price,stock,id}} cantidad={stock}/>
+                        <Contador data={{image,title,price,stock,id, descripcion}} cantidad={stock}/>
                         <Button id="botonDetalle" variant={'contained'}> <Link id="botonDetalle" to={'/Productos/' + id} > Ver detalle</Link> </Button >
                         
                     </div>

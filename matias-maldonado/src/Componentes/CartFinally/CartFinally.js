@@ -7,6 +7,7 @@ import "./Cart.css"
 
 const CartFinally = ()=>{
     const { cartListItems } = useContext(CartContext)
+    const { cantidad } = useContext(CartContext)
 
     if(cartListItems.length === 0){
             return(
@@ -27,8 +28,11 @@ const CartFinally = ()=>{
          <div key ={prod.id} id="detalleCart">
             <h3>{prod.title}</h3>
             <img alt={`${prod.descripcion}`} src={`../${prod.image}`}/>
-            <p>{prod.descripcion}</p>            
+            <h4>{cantidad}</h4>
+            <h4>{prod.descripcion}</h4>            
             <h2>${prod.price}</h2>
+            
+
           <Button>
               <DeleteIcon />
           </Button>

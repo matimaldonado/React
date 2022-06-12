@@ -6,20 +6,24 @@ import { useContext } from "react"
 
 const Cart = ()=>{
     const { totalPrice } = useContext(CartContext)
-
+    const { cantidadTotal } = useContext (CartContext)
     return(
         console.log(totalPrice),
+        console.log("lll", cantidadTotal),
         <>
         <CartFinally/>
         
         <footer>
         <div>
-            <h3>Total</h3>
-            <p>${totalPrice} </p>
+            <h2>Total</h2>
+            <h3>${totalPrice} </h3>
+            <h2>Cantidad de Items</h2>
+            <h3>{cantidadTotal}</h3>
+
 
         </div>
         <div>
-        <Button id="buton">Finalizar Compra</Button>
+        <Button id="butonCart">Finalizar Compra</Button>
         </div>
         </footer>
         </>

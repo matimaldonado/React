@@ -7,7 +7,7 @@ import CartContext  from "../Context/CartContext"
 
     const ItemComprar = ({stock, data})=>{
 
-        const{ addProductToCart  } = useContext(CartContext)
+        const{ addProductToCart } = useContext(CartContext)
 
         const [mostrarBoton, setMostrarBoton] = useState(false)
         
@@ -24,11 +24,14 @@ import CartContext  from "../Context/CartContext"
             if(Count > 1){
             setCount (Count - 1)
         }}
+    
 
          if(mostrarBoton === true){
+            
             addProductToCart({data,Count})
             
             console.log("Cantidad de productos ", Count)
+            
 
            return(
            <>
