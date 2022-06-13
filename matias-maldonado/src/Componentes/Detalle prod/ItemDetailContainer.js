@@ -2,34 +2,32 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import Productos from "./Detalleprod";
-
+import { doc, getDoc } from "firebase/firestore";
+import db from "../Firebase/firebaseConfig";
 
 const ItemDetailContainer = () => {
 
     const {id} = useParams()
 
     const [detalle , setDetalle] = useState([]);
-    
-  
-  const tomarDetalle = () => {
-    return new Promise ((resolve,reject) => {
-      setTimeout(()=>{
-              resolve(Productos)},2000)
-  })}
   
    useEffect(()=>{
-     
-    console.log("producto" , filtroProducto)
-    tomarDetalle()
-     .then((response)=>{
-       setDetalle(filtroProducto)
-     })},[])
+    getProduct()
+    .then((item)=>{
+      console.log("item", item)
+      setDetalle(item)
+    })
+  },[id])
 
-    const filtroProducto = Productos.find((product)=>{
-      return product.id == id
-    }) 
+    const getProduct = async()=>{
 
-    
+      const refDoc= doc(db,"Detalle Productos", id)
+      const docSnaptshop = await getDoc(refDoc)
+      let product = docSnaptshop.data()
+      product.id = docSnaptshop.id 
+      return product
+    } 
+
   
       return(
    

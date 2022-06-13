@@ -17,7 +17,7 @@ const addProductToCart = ({data, Count}) => {
     if (!isInCart){
         console.log("Se agrego algo" , data)    
         setCartListItems([...cartListItems, data])
-        setTotalPrice(Number(totalPrice + data.price))
+        setTotalPrice(Number(totalPrice + (data.price||data.Precio)))
         setCantidad (Count) 
         setCantidadTotal(Number(cantidadTotal + cantidad))
     }}

@@ -48,10 +48,10 @@ const MarketBtn = () =>{
         <>
          <div key ={prod.id} id="detalleCompra">
             <h3>{prod.title}</h3>
-            <img alt={`${prod.descripcion}`} src={`../${prod.image}`}/>
+            <img alt={`${prod.descripcion}`} src={`../${prod.image||prod.imagen}`}/>
             <h4>{cantidad}</h4>
             <h4>{prod.descripcion}</h4>            
-            <h2>${prod.price}</h2>
+            <h2>${prod.price || prod.precio}</h2>
           <Button>
               <DeleteIcon />
           </Button>

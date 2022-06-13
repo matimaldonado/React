@@ -19,7 +19,7 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const categorys = ["alfombras","repasadores","perfumes"]
+  const categorys = ["Alfombras","Repasadores","Perfumes"]
   
   return(
         <> 

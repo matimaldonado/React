@@ -7,20 +7,22 @@ import "./ItemDetalle.css"
 const ItemDetail = ({prod})=>{
 
     return(
+      console.log("info", prod),
 <>
 <div id="detalle">
 
   <div id="Itemdetalle">
-    <h2>{prod.tipo}</h2>
-    <img alt={`${prod.descripcion}`} src={`../${prod.imagen}`}/>
+    <h2>{prod.Tipo}</h2>
+    <img alt={`${prod.Descripción}`} src={`../${prod.Imagen}`}/>
 
   </div>
   <div id="botonesdetalle">
-    <h2>{prod.descripcion}</h2>
-    <h2>${prod.precio}</h2>
+    <h2>{prod.Descripción}</h2>
+    <h2>${prod.Precio}</h2>
+    
     <Contador
      data = {prod}
-     cantidad = {prod.stock}/>
+     cantidad = {prod.Stock}/>
       
   </div>
 </div>

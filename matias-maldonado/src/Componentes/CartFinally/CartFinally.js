@@ -26,11 +26,11 @@ const CartFinally = ()=>{
         <>
         <div id="Cart">
          <div key ={prod.id} id="detalleCart">
-            <h3>{prod.title}</h3>
-            <img alt={`${prod.descripcion}`} src={`../${prod.image}`}/>
+            <h3>{prod.title || prod.Tipo}</h3>
+            <img alt={`${prod.descripcion || prod.Descripción}`} src={`../${prod.image || prod.Imagen}`}/>
             <h4>{cantidad}</h4>
-            <h4>{prod.descripcion}</h4>            
-            <h2>${prod.price}</h2>
+            <h4>{prod.descripcion || prod.Descripción}</h4>            
+            <h2>${prod.price|| prod.Precio}</h2>
             
 
           <Button>

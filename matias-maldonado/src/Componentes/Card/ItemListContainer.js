@@ -1,49 +1,56 @@
 import "./Card.css"
 import ItemList from '../Item/ItemList';
 import { useEffect, useState } from "react";
-import Productos from "../Detalle prod/Detalleprod";
 import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import db from "../Firebase/firebaseConfig";
+import db from "../Firebase/firebaseConfig"
 
 const CardItem = () => {
   const [products , setProducts] = useState([]);
   const {category} = useParams()
 
 
- useEffect(()=>{
-   setProducts([])
-   tomarProductos()
-   .then((response)=>{
-     if(category) { 
-       const filtroProducto = response.filter(item=>item.categoria === category)
-      setProducts(filtroProducto)
-     } else {
-       setProducts(response)
-     }
+    useEffect(()=>{ 
+    setProducts([])
+    getProducts()
+    .then( (prod) => {
+      
+        if(category) { 
+
+          const filtroProducto = prod.filter(item=>item.Categoria === category)
+          
+          setProducts(filtroProducto)
+            console.log("Item", filtroProducto)
+
+        } else {
+          
+          setProducts(prod)
+          console.log("FUnciona", prod)
+        }
+        
+        })
+    },[category])
+
+  const getProducts = async() =>{
+
+  const productsSnapshot = await getDocs(collection(db, "Detalle Productos"));
+
+  const listaProductos = productsSnapshot.docs.map((doc)=>{
+
+      let product = doc.data()
+      product.id = doc.id
+        return product
+    }) 
     
-   })
- },[category])
-
-
-
- const tomarProductos = () => {
-  return new Promise ((resolve,reject) => {
-    setTimeout(()=>{
-            resolve(Productos)})
-})}
-
-
- 
-
-    return(
-
- <>
+    return listaProductos
+  }
+return (
+<>
   <h1>Nuestras Ofertas</h1>
   <ItemList products = {products}/>
  </>
-    )
-}
+    
+)}
 
 export default CardItem
 
