@@ -29,7 +29,7 @@ const CartFinally = ()=>{
             <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
             <h4>{prod.Cantidad}</h4>
             <h4>{prod.Descripcion}</h4>            
-            <h2>${prod.Precio}</h2>
+            <h2>${prod.Precio * prod.Cantidad}</h2>
             
 
           <Button>
