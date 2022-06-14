@@ -24,33 +24,44 @@ import CartContext  from "../Context/CartContext"
             if(Count > 1){
             setCount (Count - 1)
         }}
-    
+        
+        const newProduct = {
+            
+            Categoria: data.Categoria,
+            Descripcion: data.Descripción,
+            Imagen: data.Imagen,
+            id: data.id,
+            stock: data.Stock,
+            Cantidad: Count,
+            Precio: data.Precio,
+            Tipo: data.Tipo
 
-         if(mostrarBoton === true){
-            
-            addProductToCart({data,Count})
-            
-            console.log("Cantidad de productos ", Count)
-            
+        }
+        const Compra =()=>{
+            setMostrarBoton(true)
+            addProductToCart(newProduct)
+        }
 
-           return(
-           <>
-            <Button><Link id="botonTerminar" to= "/Cart"> Terminar compra </Link></Button>
-            </>
-         )}
-         else{       
-        return(
+        return (
+        <>
+           {mostrarBoton ?            
             
+            <>
+                 <Button><Link id="botonTerminar" to= "/Cart"> Terminar compra </Link></Button>
+            </> :
             <>
             <div className='Contador'>
                 <Button onClick={restItem} id='botonMenos'>-</Button>
                 <p id="Cantidad">{Count}</p>
                 <Button onClick={addItem} id='botonMas'>+</Button>
             </div>
-            <Button id="botonComprar" onClick={()=>setMostrarBoton(true)} >Agregar al carrito</Button>
+            <Button id="botonComprar" onClick={()=>Compra()} >Agregar al carrito</Button>
 
             </>
-        )}
+        }
+        </>
+        )
     }
+
 
     export default ItemComprar

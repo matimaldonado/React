@@ -9,7 +9,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const MarketBtn = () =>{
 
-    const { cantidad } = useContext(CartContext)
     const { cartListItems } = useContext(CartContext)
     const { cantidadTotal } = useContext (CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
@@ -47,11 +46,11 @@ const MarketBtn = () =>{
          return(
         <>
          <div key ={prod.id} id="detalleCompra">
-            <h3>{prod.title}</h3>
-            <img alt={`${prod.descripcion}`} src={`../${prod.image||prod.imagen}`}/>
-            <h4>{cantidad}</h4>
-            <h4>{prod.descripcion}</h4>            
-            <h2>${prod.price || prod.precio}</h2>
+            <h3>{prod.Tipo}</h3>
+            <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
+            <h4>{prod.Cantidad}</h4>
+            <h4>{prod.Descripcion}</h4>            
+            <h2>${prod.Precio}</h2>
           <Button>
               <DeleteIcon />
           </Button>

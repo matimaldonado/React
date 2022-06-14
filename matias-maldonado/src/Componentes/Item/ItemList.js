@@ -16,7 +16,7 @@ return(
                     
 
                         <Grid item md={4} key={id}>
-                            <Item title={Tipo} price={Precio} descripcion={Descripcion} image={Imagen} stock={Stock} id={id} categoria={Categoria}/>
+                            <Item Tipo={Tipo} Precio={Precio} Descripción={Descripcion} Imagen={Imagen} Stock={Stock} id={id} Categoria={Categoria}/>
                         </Grid>
                     )
                 })

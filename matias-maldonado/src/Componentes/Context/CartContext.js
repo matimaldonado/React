@@ -9,7 +9,7 @@ const CartProvider = ({children}) =>{
     const [cantidad, setCantidad] = useState([])
     const [cantidadTotal, setCantidadTotal] = useState([])
 
-const addProductToCart = ({data, Count}) => {
+const addProductToCart = (data) => {
    
     
     const isInCart =cartListItems.find((cartItem) => { return cartItem.id === data.id})
@@ -17,9 +17,9 @@ const addProductToCart = ({data, Count}) => {
     if (!isInCart){
         console.log("Se agrego algo" , data)    
         setCartListItems([...cartListItems, data])
-        setTotalPrice(Number(totalPrice + (data.price||data.Precio)))
-        setCantidad (Count) 
-        setCantidadTotal(Number(cantidadTotal + cantidad))
+        setTotalPrice(Number(totalPrice + (data.Precio)))
+        setCantidad (data.Cantidad) 
+        setCantidadTotal(Number(cantidadTotal + data.Cantidad))
     }}
 
 const cartInfo = {
