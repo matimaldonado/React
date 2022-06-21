@@ -38,10 +38,13 @@ const CartFinally = ()=>{
           </div>  
         </div>  
        </>
-
+    
        
             )}))}
     
             
 }
 export default CartFinally
+
+
+

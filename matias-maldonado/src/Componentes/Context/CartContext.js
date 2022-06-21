@@ -22,12 +22,18 @@ const addProductToCart = (data) => {
         setCantidadTotal(Number(cantidadTotal + data.Cantidad))
     }}
 
+    const cleanCartProducts = () => {
+        setTotalPrice(0)
+        setCartListItems([])
+    }
+
 const cartInfo = {
     cartListItems,
     addProductToCart,
     totalPrice,
     cantidad,
-    cantidadTotal
+    cantidadTotal,
+    cleanCartProducts
 }
     
 return(
