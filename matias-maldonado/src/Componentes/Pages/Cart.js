@@ -14,9 +14,9 @@ const Cart = () => {
     const { cartListItems,cleanCartProducts , totalPrice, cantidadTotal} = useContext(CartContext)
     const [showModal, setShowModal] = useState(false)
     const [formValue, setFormValue] = useState({
-        name: '',
-        phone: '',
-        email: ''
+        Nombre: '',
+        Telefono: '',
+        Email: ''
     })
     const [order, setOrder] = useState({
         buyer: {},
@@ -29,10 +29,7 @@ const Cart = () => {
         } ),
         total: totalPrice
     })
-    const [success, setSuccess] = useState()
-    const navigate = useNavigate()
-
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         setOrder({...order, buyer: formValue})
@@ -43,15 +40,11 @@ const Cart = () => {
         setFormValue({...formValue, [e.target.name]: e.target.value})
     }
 
-    const finishOrder = () => {
-        navigate('/')
-    }
-
+    
     const saveData = async (newOrder) => {
         const orderFirebase = collection(db, 'ordenes')
         const orderDoc = await addDoc(orderFirebase, newOrder)
         console.log("orden generada: ", orderDoc.id)
-        setSuccess(orderDoc.id)
         cleanCartProducts()
     }
 
@@ -75,27 +68,22 @@ const Cart = () => {
 
                 <form id="Contacto" onSubmit={handleSubmit}>
                     <TextField 
-                        id="outlined-basic" 
-                        name="name"
-                        label="Nombre y Apellido" 
-                        variant="outlined" 
-                        value={formValue.name}
+                        name="Nombre"
+                        label="Nombre y Apellido"  
+                        value={formValue.Nombre}
                         onChange={handleChange}
                     />
                     <TextField 
-                        id="outlined-basic" 
-                        name="phone"
+                        name="Telefono"
                         label="Telefono" 
-                        variant="outlined" 
-                        value={formValue.phone}
+                        value={formValue.Telefono}
                         onChange={handleChange}
                     />
                     <TextField 
-                        id="outlined-basic" 
-                        name="email"
-                        label="Mail" 
-                        value={formValue.email}
-                        variant="outlined" 
+                        
+                        name="Email"
+                        label="Email" 
+                        value={formValue.Email} 
                         onChange={handleChange}
                     />
                     <Button id="butonCart" type="submit">Enviar</Button>
