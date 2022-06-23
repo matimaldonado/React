@@ -28,3 +28,15 @@
     color: white;
     padding: 1%;
 }
+
+#Contacto{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#Contacto button{
+    width: 20%;
+    margin: auto;
+    margin-top: 5%;
+}

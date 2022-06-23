@@ -7,6 +7,8 @@ import { addDoc, collection } from 'firebase/firestore'
 import { useNavigate } from "react-router-dom"
 import Modal from "../Card/Modal"
 import db from "../Firebase/firebaseConfig"
+import "../CartFinally/Cart.css"
+
 
 const Cart = () => {
     const { cartListItems,cleanCartProducts , totalPrice, cantidadTotal} = useContext(CartContext)
@@ -68,16 +70,10 @@ const Cart = () => {
             <div>
             <Button id="butonCart" onClick={() => setShowModal(true)}>Finalizar Compra</Button>
             </div>
-        <div>
-        <Modal title={success ? 'Compra exitosa' : 'Formulario de contacto'} open={showModal} handleClose={() => setShowModal(false)}>
-            {success ? (
-                <div>
-                    La order se genero con exito!
-                    Numero de orden: {success}
-                    <button onClick={finishOrder}>Aceptar</button>
-                </div>
-            ) : (
-                <form className="form-contact" onSubmit={handleSubmit}>
+        <div >
+        <Modal title="Datos contacto" open={showModal} handleClose={() => setShowModal(false)}>
+
+                <form id="Contacto" onSubmit={handleSubmit}>
                     <TextField 
                         id="outlined-basic" 
                         name="name"
@@ -102,9 +98,9 @@ const Cart = () => {
                         variant="outlined" 
                         onChange={handleChange}
                     />
-                    <button type="submit">Enviar</button>
+                    <Button id="butonCart" type="submit">Enviar</Button>
                 </form>
-            )}
+        
             
         </Modal>
     </div>
