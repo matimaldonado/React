@@ -40,3 +40,8 @@
     margin: auto;
     margin-top: 5%;
 }
+#Finalizacompra{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}

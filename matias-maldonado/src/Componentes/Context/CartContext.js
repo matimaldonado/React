@@ -25,6 +25,7 @@ const addProductToCart = (data) => {
     const cleanCartProducts = () => {
         setTotalPrice(0)
         setCartListItems([])
+        setCantidadTotal(0)
     }
 
 const cartInfo = {
