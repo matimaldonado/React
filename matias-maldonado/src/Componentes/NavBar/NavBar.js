@@ -35,7 +35,6 @@ const NavBar = () => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         id='buton' 
-        color="inherit"
       >
       Productos
       </Button>
