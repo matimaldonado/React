@@ -1,19 +1,24 @@
 #imagenCard{
-width: 100% ;
-height: 200px;
-margin: auto;
+    width: 70% ;
+    height: 200px;
+    margin-top: 5%;
 }
 
 .card-item{
     display: flex;
     flex-direction: column;
-    margin: 10%;
-
+    margin: auto;
+    align-content: center;
+    width: 100%;
 }
 
 .titulo-card{
     font-size: 30px;
     text-decoration: underline;
+}
+
+#card-detail{
+    background-image: radial-gradient(rgb(136, 104, 67),rgb(204, 141, 69), rgb(230, 208, 184))
 }
 
 span{
@@ -22,9 +27,10 @@ span{
 
 #Card1{
     display:flex ;
-    margin: 5%;
+    margin: auto;
     width: 90%;
     border: solid 1px rgb(204, 141, 69);
+    align-items: center;
 }
 
 .Contador{
