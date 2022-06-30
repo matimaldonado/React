@@ -19,11 +19,11 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const categorys = ["Alfombras","Repasadores","Perfumes"]
+  const categorys = ["Alfombras","Almohadones","Manteles","Medias","Perfumes","Repasadores","Sabanas","Toallones"]
   
   return(
         <> 
-        <h1> <Link id="titulo" to='/'>Mati Maldonado</Link></h1>
+        <h1 id="titulo"> <Link id="titulo" to='/'><img src='Titulo.PNG'/> Mati Maldonado</Link></h1>
       <AppBar position="static">
         <Toolbar >
           <Button id='buton' color="inherit"> <Link id='buton' to="/">Inicio</Link></Button>
@@ -49,7 +49,7 @@ const NavBar = () => {
         }}
       >
         {categorys.map((cat)=>{
-         return <MenuItem onClick={handleClose}><Link id="buton" to={`/products/${cat}`}>{cat}</Link></MenuItem>
+         return <MenuItem onClick={handleClose}><Link id="buton-interno" to={`/products/${cat}`}>{cat}</Link></MenuItem>
         })}
         
       </Menu>
