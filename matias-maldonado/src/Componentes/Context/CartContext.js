@@ -27,6 +27,18 @@ const addProductToCart = (data) => {
         setCartListItems([])
         setCantidadTotal(0)
     }
+    const sumItem = (data) =>{
+        setCantidad (cantidad + 1)
+        setCantidadTotal (cantidadTotal + 1)
+        setTotalPrice (totalPrice + (data.Precio*data.Cantidad))
+    }
+    const deletedItem = (data) => {
+     
+        setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== data.id) )
+        setCantidadTotal(Number(cantidadTotal - data.Cantidad) )
+        setTotalPrice(Number(totalPrice-(data.Precio*data.Cantidad)))
+       
+    }
 
 const cartInfo = {
     cartListItems,
@@ -34,7 +46,9 @@ const cartInfo = {
     totalPrice,
     cantidad,
     cantidadTotal,
-    cleanCartProducts
+    cleanCartProducts,
+    deletedItem,
+    sumItem
 }
     
 return(

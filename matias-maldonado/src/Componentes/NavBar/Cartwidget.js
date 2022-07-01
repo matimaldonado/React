@@ -7,18 +7,22 @@ import './NavBar.css'
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const MarketBtn = () =>{
+const MarketBtn = (prod) =>{
 
     const { cartListItems } = useContext(CartContext)
-    const { cantidadTotal } = useContext (CartContext)
+    const { cantidadTotal , cantidad } = useContext (CartContext)
+    const {deletedItem} = useContext(CartContext)
+    const {sumItem} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
+
     return(
        <>
         <Button id='btnCarrito' color='inherit'  onClick={handleClick} >
@@ -42,16 +46,20 @@ const MarketBtn = () =>{
                         </>
                     )} 
              {cartListItems.map((prod)=>{
-
+              
          return(
         <>
          <div key ={prod.id} id="detalleCompra">
             <h3>{prod.Tipo}</h3>
             <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
-            <h4>{prod.Cantidad}</h4>
+            <div id="btnCantidad">
+             <Button>-</Button> 
+            <h4>{cantidad}</h4>
+            <Button onClick={sumItem}>+</Button>
+            </div>
             <h4>{prod.Descripcion}</h4>            
             <h2>${prod.Precio * prod.Cantidad}</h2>
-          <Button>
+          <Button onClick={()=>deletedItem(prod)}>
               <DeleteIcon />
           </Button>
           </div>

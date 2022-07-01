@@ -7,6 +7,7 @@ import "./Cart.css"
 
 const CartFinally = ()=>{
     const { cartListItems } = useContext(CartContext)
+    const {deletedItem} = useContext(CartContext)
 
     if(cartListItems.length === 0){
             return(
@@ -32,7 +33,7 @@ const CartFinally = ()=>{
             <h2>${prod.Precio * prod.Cantidad}</h2>
             
 
-          <Button>
+            <Button onClick={()=>deletedItem(prod)}>
               <DeleteIcon />
           </Button>
           </div>  
