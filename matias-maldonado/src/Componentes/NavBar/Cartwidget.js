@@ -7,12 +7,11 @@ import './NavBar.css'
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const MarketBtn = (prod) =>{
+const MarketBtn = () =>{
 
     const { cartListItems } = useContext(CartContext)
-    const { cantidadTotal , cantidad } = useContext (CartContext)
+    const { cantidadTotal, restItem, sumItem, cantidad } = useContext (CartContext)
     const {deletedItem} = useContext(CartContext)
-    const {sumItem} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -22,6 +21,7 @@ const MarketBtn = (prod) =>{
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
 
     return(
        <>
@@ -46,26 +46,25 @@ const MarketBtn = (prod) =>{
                         </>
                     )} 
              {cartListItems.map((prod)=>{
-              
          return(
-        <>
+                  <>
          <div key ={prod.id} id="detalleCompra">
             <h3>{prod.Tipo}</h3>
             <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
             <div id="btnCantidad">
-             <Button>-</Button> 
+            <Button  onClick={()=>restItem(prod)}>-</Button>
             <h4>{cantidad}</h4>
-            <Button onClick={sumItem}>+</Button>
+            <Button onClick={()=>sumItem(prod)}>+</Button>
             </div>
             <h4>{prod.Descripcion}</h4>            
-            <h2>${prod.Precio * prod.Cantidad}</h2>
+            <h2>${prod.Precio * cantidad}</h2>
           <Button onClick={()=>deletedItem(prod)}>
               <DeleteIcon />
           </Button>
           </div>
        </>
        )})}
-       <Button><Link id="botonCarrito" to= "/Cart"> Terminar compra </Link></Button>  
+       <Button onClick={handleClose}><Link id="botonCarrito" to= "/Cart"> Terminar compra </Link></Button>  
        </div>         
       </Menu>
         </>

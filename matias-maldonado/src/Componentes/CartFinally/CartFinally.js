@@ -7,7 +7,7 @@ import "./Cart.css"
 
 const CartFinally = ()=>{
     const { cartListItems } = useContext(CartContext)
-    const {deletedItem} = useContext(CartContext)
+    const {deletedItem, restItem,sumItem,cantidad} = useContext(CartContext)
 
     if(cartListItems.length === 0){
             return(
@@ -28,7 +28,11 @@ const CartFinally = ()=>{
          <div key ={prod.id} id="detalleCart">
             <h3>{prod.Tipo}</h3>
             <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
-            <h4>{prod.Cantidad}</h4>
+            <div id="btnCantidad">
+            <Button onClick={()=>restItem(prod)}>-</Button>
+            <h4>{cantidad}</h4>
+            <Button onClick={()=>sumItem(prod)}>+</Button>
+            </div>
             <h4>{prod.Descripcion}</h4>            
             <h2>${prod.Precio * prod.Cantidad}</h2>
             
