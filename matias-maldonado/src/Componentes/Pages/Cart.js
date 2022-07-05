@@ -11,7 +11,7 @@ import "../CartFinally/Cart.css"
 
 
 const Cart = () => {
-    const { cartListItems,cleanCartProducts , totalPrice, cantidadTotal} = useContext(CartContext)
+    const { cartListItems,cleanCartProducts ,totalFinal, totalPrice, cantidadTotal} = useContext(CartContext)
     const [showModal, setShowModal] = useState(false)
     const [formValue, setFormValue] = useState({
         Nombre: '',
@@ -27,7 +27,7 @@ const Cart = () => {
                 price: item.Precio,
             }
         } ),
-        total: totalPrice
+        total: totalFinal
     })
     
     const [success, setSuccess] = useState()

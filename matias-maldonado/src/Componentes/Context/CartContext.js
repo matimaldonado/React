@@ -17,28 +17,30 @@ const CartProvider = ({children}) =>{
         setCartListItems([...cartListItems, data])
         setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
         setCantidadTotal(Number(cantidadTotal + data.Cantidad))
-        setCantidad (data.Cantidad)
     }else{
+        isInCart.Cantidad += data.Cantidad;
+        setCartListItems(cartListItems);
         setCantidad(cantidad + data.Cantidad)
         setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
         setCantidadTotal(Number(cantidadTotal + data.Cantidad))
     }
     }
+
     const sumItem = (prod)=>{
-        console.log(prod)
-        if(cantidad < prod.stock){
+        if(prod.Cantidad < prod.stock){
         
-        setCantidad(cantidad + 1 )
-        setTotalPrice(Number(totalPrice + (prod.Precio * prod.Cantidad)))
-        setCantidadTotal(Number(cantidadTotal + prod.Cantidad))
+        prod.Cantidad = prod.Cantidad + 1 
+        setTotalPrice(Number(totalPrice + prod.Precio))
+        setCantidadTotal(Number(cantidadTotal + 1))
     }}
     
     const restItem = (prod)=>{
-        if(cantidad > 1){
-            setCantidad(cantidad - 1 )
-        setTotalPrice(Number(totalPrice - (prod.Precio * prod.Cantidad)))
-        setCantidadTotal(Number(cantidadTotal - prod.Cantidad))
+        if(prod.Cantidad > 1){
+            prod.Cantidad = prod.Cantidad - 1
+        setTotalPrice(Number(totalPrice - prod.Precio))
+        setCantidadTotal(Number(cantidadTotal - 1))
         }}
+
     const cleanCartProducts = () => {
         setTotalPrice(0)
         setCartListItems([])
@@ -50,9 +52,9 @@ const CartProvider = ({children}) =>{
     const deletedItem = (data) => {
 
         setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== data.id) )
-        setCantidadTotal(Number(cantidadTotal - cantidad) )
-        setTotalPrice(Number(totalPrice-(data.Precio*cantidad)))
-       
+        setCantidadTotal(Number(cantidadTotal - data.Cantidad) )
+        setTotalPrice(Number(totalPrice-(data.Precio*data.Cantidad)))
+        
     }
 
 const cartInfo = {
@@ -64,7 +66,7 @@ const cartInfo = {
     deletedItem,
     cantidad,
     restItem,
-    sumItem
+    sumItem,
 }
     
 return(
