@@ -72,7 +72,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Trabajo "MATIAS MALDONADO"
 
-Este trabajo fue creado como parte del curso de React JS en Coderhouse para la entrega del proyecto final, en la continuación se detallan cada uno de los componentes dentro del mismo.
+Este trabajo fue creado como parte del curso de React JS en Coderhouse para la entrega del proyecto final.
+
+El objetivo del proyecto es la creación de un sitio web de e-commerce, en donde se pueda llevar a cabo todo el proceso de compra de un elemento, utilizando las diferentes funcionalidades aprendidas durante el cursado.
+
+Además de los componentes propios de la creación del sitio, se agregan el uso de Firebase como base de dato para los productos a presentar, para la creación de ordenes de compra y para la recepción de consultas.
+
+En la continuación se detallan cada uno de los componentes dentro del mismo.
 
 ### Carpeta public
 Contiene las imagenes que se colocaran en el posterior sitio web.
@@ -143,12 +149,25 @@ Contiene los elementos de diseño de la barra de navegacion.
 
 ### Carpeta Pages
 Contiene los componentes que conllevan la informacion de cada página del sitio.
+  ### Cart.js
+Contiene el componente  Cart, por el cual se recibiran los productos que el cliente seleccionó y se mostraran en la pantalla final dando paso al cierre de la compra. En el caso de que el cliente no tenga productos ingresado, mostrará un texto haciendo referencia a esto y lo invitará al cliente al Inicio del sitio.
+
+Dentro de este componente se ejecutará el CartFinally que introducirá el detalle del producto junto con el precio y las cantidades de los mismos. A su vez se observaran las cantidades y valor total a través de "cantidadTotal" y "totalPrice"
+
+Al finalizar la compra, se desplegará un Modal que permitirá al usuario cargar sus datos a través de los TextField. Una vez completados los campos obligatorios, al enviar la información, se recepcionará en la base de datos de Firebase (coleccion:ordenes), y se ejecutará el elemento Success que dispondrá de un mensaje de recepción de orden y el n° de la misma.
+
+
   ### Contacto.js
-  Aún en trabajo
+Contiene el componente Contacto, donde se encuentra un formulario para el envío de consultas y datos personales de los clientes. El envío del mismo es recepcionado en una base de datos creada en Firebase. Una vez realizada la consulta, la pantalla informará que se realizó la misma e introducirá un botón para regresar al inicio.
+
   ### Detalleproducto.js
 Contiene el componete DetalleProducto que recibe a ItemDetailContainer y luego es enviado a App.js para ser linkeado y mostrado en el sitio pero solo mostrando el detalle de cada uno de los productos.  
+
   ### Home.js
   Contiene el componete Home que recibe a CardList y luego es enviado a App.js para ser linkeado y mostrado en el sitio como página principal del mismo.
+
   ### Productos.js
 Contiene el componete ProductoList que recibe a CardItem y luego es enviado a App.js para ser linkeado y mostrado en el sitio pero solo mostrando las categorias de los mismos.  
 
+  ### QuienesSomos.js
+Contiene el componente QuienesSomos que introduce una pequeña introducción e información resumida de la empresa del sitio web.
