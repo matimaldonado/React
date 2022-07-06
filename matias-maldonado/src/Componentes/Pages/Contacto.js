@@ -1,14 +1,12 @@
  import { Button } from "@mui/material"
- import { useState, useContext } from "react"
+ import { useState } from "react"
  import { addDoc, collection } from 'firebase/firestore'
  import db from "../Firebase/firebaseConfig"
- import CartContext  from "../Context/CartContext"
  import TextField from '@mui/material/TextField'
  import { useNavigate } from "react-router-dom"
  import "./pages.css"
  const Contacto = ()=>{
 
-     const { cleanCartProducts} = useContext(CartContext)
      const [verModal, setVerModal] = useState(false)
      const [success, setSuccess] = useState()
      const [formValue, setFormValue] = useState({
@@ -40,7 +38,7 @@
          const orderFirebase = collection(db, 'Contacto')
          const contactDoc = await addDoc(orderFirebase, newContact)
          setSuccess(contactDoc.id)
-         cleanCartProducts()
+         
      }
 
      return(
