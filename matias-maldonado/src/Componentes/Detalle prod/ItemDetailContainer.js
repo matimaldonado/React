@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import Productos from "./Detalleprod";
 import { doc, getDoc } from "firebase/firestore";
 import db from "../Firebase/firebaseConfig";
 
@@ -11,12 +10,11 @@ const ItemDetailContainer = () => {
 
     const [detalle , setDetalle] = useState([]);
   
-   useEffect(()=>{
-    getProduct()
-    .then((item)=>{
-      console.log("item", item)
+      useEffect(()=>{
+      getProduct()
+      .then((item)=>{
       setDetalle(item)
-    })
+      })
   },[id])
 
     const getProduct = async()=>{
@@ -31,10 +29,10 @@ const ItemDetailContainer = () => {
   
       return(
    
-   <>
-    <ItemDetail prod = {detalle} />
-    
-   </>
+          <>
+            <ItemDetail prod = {detalle} />
+            
+          </>
       )
   }
   

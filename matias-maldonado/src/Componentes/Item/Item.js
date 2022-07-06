@@ -1,4 +1,3 @@
-//Cargar datos del producto y se lo pasa al app
 import "../Card/Card.css"
 import Contador from "../Card/ItemCount"
 import { Button, Card} from '@mui/material';
@@ -12,9 +11,9 @@ const Item = ({Imagen,Tipo,Precio,Stock,id,Descripción})=>{
                 <Card id="Card1"  >
                     <div className="card-item">
                         <div id="card-detail">
-                        <img alt={`${Tipo}`} id="imagenCard" src={`/${Imagen}`}  />
-                        <p className='titulo-card'>{Tipo}</p>
-                        <span>${Precio}</span>
+                            <img alt={`${Tipo}`} id="imagenCard" src={`/${Imagen}`}  />
+                            <p className='titulo-card'>{Tipo}</p>
+                            <span>${Precio}</span>
                         </div>
                         <Contador data={{Imagen,Tipo,Precio,Stock,id, Descripción}} cantidad={Stock}/>
                         <Button id="botonDetalle" variant={'contained'}> <Link id="botonDetalle" to={'/Productos/' + id} > Ver detalle</Link> </Button >

@@ -14,6 +14,7 @@ const MarketBtn = () =>{
     const {deletedItem} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    
     const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -45,29 +46,28 @@ const MarketBtn = () =>{
                             
                         </>
                     )} 
-             {cartListItems.map((prod)=>{
-         return(
-                  <>
-         <div key ={prod.id} id="detalleCompra">
-            <h3>{prod.Tipo}</h3>
-            <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
-            <div id="btnCantidad">
-            <Button  onClick={()=>restItem(prod)}>-</Button>
-            <h4>{prod.Cantidad}</h4>
-            <Button onClick={()=>sumItem(prod)}>+</Button>
-            </div>
-            <h4>{prod.Descripcion}</h4> 
-            <h4>Precio unitario ${prod.Precio}</h4>           
-            <h2>Total ${prod.Precio * prod.Cantidad}</h2>
-          <Button onClick={()=>deletedItem(prod)}>
-              <DeleteIcon />
-          </Button>
-          </div>
-       </>
-       )})}
-       <Button onClick={handleClose}><Link id="botonCarrito" to= "/Cart"> Terminar compra </Link></Button>  
+                    {cartListItems.map((prod)=>{
+                          return(
+                          <>
+                          <div key ={prod.id} id="detalleCompra">
+                                <h3>{prod.Tipo}</h3>
+                                <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
+                                <div id="btnCantidad">
+                                  <Button  onClick={()=>restItem(prod)}>-</Button>
+                                  <h4>{prod.Cantidad}</h4>
+                                  <Button onClick={()=>sumItem(prod)}>+</Button>
+                                </div>
+                                <h4>{prod.Descripcion}</h4> 
+                                <h2>Total ${prod.Precio * prod.Cantidad}</h2>
+                                <Button onClick={()=>deletedItem(prod)}>
+                                    <DeleteIcon />
+                                </Button>
+                          </div>
+                          </>
+              )})}
+                    <Button onClick={handleClose}><Link id="botonCarrito" to= "/Cart"> Terminar compra </Link></Button>  
        </div>         
-      </Menu>
+    </Menu>
         </>
     )
 }

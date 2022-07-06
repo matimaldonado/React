@@ -21,30 +21,27 @@ const CartFinally = ()=>{
             )} else{
            
                 return(
-         cartListItems.map((prod)=>{
-         return(
-        <>
-        <div id="Cart">
-         <div key ={prod.id} id="detalleCart">
-            <h3>{prod.Tipo}</h3>
-            <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
-            <div id="btnCantidad">
-            <Button  onClick={()=>restItem(prod)}>-</Button>
-            <h4>{prod.Cantidad}</h4>
-            <Button onClick={()=>sumItem(prod)}>+</Button>
-            </div>
-            <h4>{prod.Descripcion}</h4>            
-            <h4>Precio unitario ${prod.Precio}</h4>
-            <h2>Total ${prod.Precio * prod.Cantidad}</h2>
-
-            <Button onClick={()=>deletedItem(prod)}>
-              <DeleteIcon />
-          </Button>
-          </div>  
-        </div>  
-       </>
-    
-       
+                    cartListItems.map((prod)=>{
+                        return(
+                            <>
+                            <div id="Cart">
+                                <div key ={prod.id} id="detalleCart">
+                                    <h3>{prod.Tipo}</h3>
+                                    <img alt={`${prod.Descripcion}`} src={`../${prod.Imagen}`}/>
+                                    <div id="btnCantidad">
+                                        <Button  onClick={()=>restItem(prod)}>-</Button>
+                                        <h4>{prod.Cantidad}</h4>
+                                        <Button onClick={()=>sumItem(prod)}>+</Button>
+                                    </div>
+                                    <h4>{prod.Descripcion}</h4>            
+                                    <h4>Precio unitario ${prod.Precio}</h4>
+                                    <h2>Total ${prod.Precio * prod.Cantidad}</h2>
+                                    <Button onClick={()=>deletedItem(prod)}>
+                                        <DeleteIcon />
+                                    </Button>
+                                </div>  
+                            </div>  
+                            </>     
             )}))}
     
             

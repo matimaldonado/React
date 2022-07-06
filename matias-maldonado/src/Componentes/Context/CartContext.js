@@ -12,33 +12,33 @@ const CartProvider = ({children}) =>{
    
     
     const isInCart =cartListItems.find((cartItem) => {return cartItem.id === data.id})
-    if (!isInCart){
-        console.log("Se agrego algo" , data)    
-        setCartListItems([...cartListItems, data])
-        setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
-        setCantidadTotal(Number(cantidadTotal + data.Cantidad))
-    }else{
-        isInCart.Cantidad += data.Cantidad;
-        setCartListItems(cartListItems);
-        setCantidad(cantidad + data.Cantidad)
-        setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
-        setCantidadTotal(Number(cantidadTotal + data.Cantidad))
-    }
-    }
+        if (!isInCart){
+            console.log("Se agrego algo" , data)    
+            setCartListItems([...cartListItems, data])
+            setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
+            setCantidadTotal(Number(cantidadTotal + data.Cantidad))
+        }else{
+            isInCart.Cantidad += data.Cantidad;
+            setCartListItems(cartListItems);
+            setCantidad(cantidad + data.Cantidad)
+            setTotalPrice(Number(totalPrice + (data.Precio * data.Cantidad)))
+            setCantidadTotal(Number(cantidadTotal + data.Cantidad))
+        }
+        }
 
     const sumItem = (prod)=>{
         if(prod.Cantidad < prod.stock){
         
-        prod.Cantidad = prod.Cantidad + 1 
-        setTotalPrice(Number(totalPrice + prod.Precio))
-        setCantidadTotal(Number(cantidadTotal + 1))
+            prod.Cantidad = prod.Cantidad + 1 
+            setTotalPrice(Number(totalPrice + prod.Precio))
+            setCantidadTotal(Number(cantidadTotal + 1))
     }}
     
     const restItem = (prod)=>{
         if(prod.Cantidad > 1){
             prod.Cantidad = prod.Cantidad - 1
-        setTotalPrice(Number(totalPrice - prod.Precio))
-        setCantidadTotal(Number(cantidadTotal - 1))
+            setTotalPrice(Number(totalPrice - prod.Precio))
+            setCantidadTotal(Number(cantidadTotal - 1))
         }}
 
     const cleanCartProducts = () => {
@@ -57,17 +57,17 @@ const CartProvider = ({children}) =>{
         
     }
 
-const cartInfo = {
-    cartListItems,
-    addProductToCart,
-    totalPrice,
-    cantidadTotal,
-    cleanCartProducts,
-    deletedItem,
-    cantidad,
-    restItem,
-    sumItem,
-}
+    const cartInfo = {
+        cartListItems,
+        addProductToCart,
+        totalPrice,
+        cantidadTotal,
+        cleanCartProducts,
+        deletedItem,
+        cantidad,
+        restItem,
+        sumItem,
+    }
     
 return(
         <CartContext.Provider value={cartInfo}>

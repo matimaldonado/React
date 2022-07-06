@@ -43,23 +43,23 @@ import CartContext  from "../Context/CartContext"
         }
 
         return (
-        <>
-           {mostrarBoton ?            
-            
             <>
-                 <Button><Link id="botonTerminar" to= "/Cart"> Terminar compra </Link></Button>
-            </> :
-            <>
-            <div className='Contador'>
-                <Button onClick={restItem} id='botonMenos'>-</Button>
-                <p id="Cantidad">{Count}</p>
-                <Button onClick={addItem} id='botonMas'>+</Button>
-            </div>
-            <Button id="botonComprar" onClick={()=>Compra()} >Agregar al carrito</Button>
+            {mostrarBoton ?            
+                
+                <>
+                <Button><Link id="botonTerminar" to= "/Cart"> Terminar compra </Link></Button>
+                </> :
+                <>
+                <div className='Contador'>
+                    <Button onClick={restItem} id='botonMenos'>-</Button>
+                    <p id="Cantidad">{Count}</p>
+                    <Button onClick={addItem} id='botonMas'>+</Button>
+                </div>
+                <Button id="botonComprar" onClick={()=>Compra()} >Agregar al carrito</Button>
 
+                </>
+            }
             </>
-        }
-        </>
         )
     }
 

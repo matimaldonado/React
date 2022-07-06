@@ -1,0 +1,21 @@
+#formContacto{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 2%;
+
+}
+#datosForm{
+border: solid 2px rgb(204, 141, 69); 
+margin: 1%;   
+}
+
+
+
+#tituloContacto{
+    width: 50%;
+    margin: auto;
+    padding: 2%;
+}
+

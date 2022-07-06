@@ -33,25 +33,24 @@ const CardItem = () => {
 
   const getProducts = async() =>{
 
-  const productsSnapshot = await getDocs(collection(db, "Detalle Productos"));
+    const productsSnapshot = await getDocs(collection(db, "Detalle Productos"));
 
-  const listaProductos = productsSnapshot.docs.map((doc)=>{
+    const listaProductos = productsSnapshot.docs.map((doc)=>{
 
-      let product = doc.data()
-      product.id = doc.id
-        return product
-    }) 
-    
+        let product = doc.data()
+        product.id = doc.id
+          return product
+      }) 
+      
     return listaProductos
   }
 return (
-<>
-  <h1>Nuestras Ofertas</h1>
-  <ItemList products = {products}/>
- </>
+  <>
+    <h1>Nuestras Ofertas</h1>
+    <ItemList products = {products}/>
+  </>
     
 )}
 
 export default CardItem
 
-//Con props (Propiedades), le puedo agregar elementos distintos a cada card

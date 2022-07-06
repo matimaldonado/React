@@ -7,7 +7,7 @@ import DetalleProducto from './Componentes/Pages/Detalleproducto';
 import ProductoList from './Componentes/Pages/Productos';
 import { CartProvider } from './Componentes/Context/CartContext';
 import Cart from './Componentes/Pages/Cart';
-
+import QuienesSomos from './Componentes/Pages/QuienesSomos';
 
 function App() {
  
@@ -24,6 +24,7 @@ function App() {
         <Route exact path= '/Productos/:id' element={<DetalleProducto/>}/>
         <Route exact path= '/Contacto' element={<Contacto/>}/>
         <Route exact path='/Cart' element={<Cart/>}/>
+        <Route exact path = '/QuienesSomos' element ={<QuienesSomos/>}/>
       </Routes>
       
       

@@ -1,6 +1,7 @@
 #detalle{
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 #Itemdetalle{
     border: solid 1px rgb(204, 141, 69);
